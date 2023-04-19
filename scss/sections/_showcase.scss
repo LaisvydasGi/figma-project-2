@@ -1,0 +1,78 @@
+@use 'variables/responsive' as r;
+
+$bg-color: rgb(230, 227, 227);
+$gray: rgb(126, 125, 125);
+$orange: orange;
+
+.showcase-section-content {
+  & .section-description {
+    padding-bottom: 50px;
+  }
+
+  & .showcase-list {
+    display: flex;
+    column-gap: 35px;
+
+    & .showcase-item {
+      width: 290px;
+      background-color: $bg-color;
+      border-radius: 15px;
+
+      @include r.DM {
+        background-color: black;
+      }
+
+      & .text-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 20px;
+
+        & .id-info {
+          display: flex;
+          flex-direction: column;
+          row-gap: 5px;
+
+          & .series-name {
+            color: $orange;
+            text-transform: uppercase;
+            font-size: 12px;
+          }
+
+          & .item-name {
+            font-size: 20px;
+            font-weight: 500;
+          }
+
+          & .item-id {
+            font-size: 18px;
+            color: $gray;
+          }
+        }
+
+        & .bid-info {
+          display: flex;
+          flex-direction: column;
+          row-gap: 5px;
+          align-items: flex-end;
+
+          & .top-bid {
+            color: $gray;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 500;
+          }
+
+          & .bid-value {
+            font-size: 20px;
+            font-weight: 500;
+          }
+
+          & .time-left {
+            font-size: 18px;
+            color: $gray;
+          }
+        }
+      }
+    }
+  }
+}

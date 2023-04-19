@@ -1,0 +1,31 @@
+@use 'variables/responsive' as r;
+
+
+.upsell-section {
+
+  @include r.large {
+    padding: 0;
+  }
+
+  .upsell-section-content {
+    background: linear-gradient(48deg, rgba(255, 73, 115, 1) 8%, rgba(255, 127, 57, 1) 57%, rgba(152, 226, 161, 1) 100%);
+    border-radius: 15px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  
+    padding: 120px 60px 60px 60px;
+  
+    @include r.large {
+      border-radius: 0;
+      padding: 80px 32px 32px;
+    }
+
+    & .section-title, .section-description {
+      @include r.DM {
+        color: black;
+      }
+    }
+  }
+}

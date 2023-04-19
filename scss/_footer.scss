@@ -1,0 +1,118 @@
+@use 'sections/variables/responsive' as r;
+
+.main-footer {
+  padding-bottom: 70px;
+  padding-top: 120px;
+
+  @include r.medium {
+    padding-bottom: 105px;
+    padding-top: 42px;
+  }
+
+  .main-footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 120px;
+  
+    @include r.medium {
+      flex-wrap: wrap;
+      padding-bottom: 64px;
+    }
+
+    .footer-left {
+      width: 20%;
+
+      @include r.medium {
+        width: 100%;
+      }
+
+      .logo-wrapper {
+        img {
+          padding-bottom: 30px;
+
+          @include r.medium {
+            display: block;
+          }
+        }
+        
+        @include r.DM {
+          filter: invert(1) grayscale(1);
+        }
+      }
+
+      span {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 100%;
+        color: #555555;
+      }
+
+      ul {
+        display: flex;
+        padding-top: 32px;
+        gap: 16px;
+        @include r.medium {
+          padding-bottom: 64px;
+        }
+        img {
+          @include r.medium {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .footer-right {
+      .link-list {
+        display: flex;
+        justify-content: space-between;
+        gap: 101px;
+
+        @include r.medium {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 75px;
+          row-gap: 40px;
+        }
+
+        .link-item {
+          .link-title {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #555555;
+            padding-bottom: 28px;
+          }
+          ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            li {
+            a {
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 100%;
+            }
+          }
+          }
+        }
+      }
+    }
+  }
+
+  .footer-copyright {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    color: #999999;
+    .Launching {
+      @include r.medium {
+        display: none;
+      }
+    }
+  }
+}

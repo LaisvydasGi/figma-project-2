@@ -1,0 +1,59 @@
+@use 'sections/variables/responsive' as r;
+
+.main-header {
+  background-color: transparent;
+
+  @include r.x-large {
+    margin-bottom: 0;
+  }
+
+  & .main-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 70px;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    @include r.x-large {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    & .logo-wrapper {
+      filter: invert(1) grayscale(1);
+    }
+
+    & .main-navigation {
+      display: flex;
+      align-items: center;
+
+      & .hamburger {
+        display: none;
+
+        @include r.x-large {
+          display: inline-block;
+        }
+      }
+
+      & .main-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+
+        @include r.x-large {
+          display: none;
+        }
+
+        & a {
+          display: inline-block;
+          padding: 5px 14px;
+
+          &.button-small {
+            color: #ff3998;
+          }
+        }
+      }
+    }
+  }
+}
